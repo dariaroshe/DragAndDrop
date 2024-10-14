@@ -4,8 +4,6 @@ public class DragAndDrop : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
     [SerializeField] private float _dragHeight = 1.5f;
-    [SerializeField] private Vector2 _gameSize;
-    [SerializeField] private Vector3 _respawnPosition;
     
     private bool _isDragging;
     private Plane _dragPlane;
@@ -38,8 +36,6 @@ public class DragAndDrop : MonoBehaviour
         {
             var point = ray.GetPoint(enter);
             _targetPosition = point;
-            _targetPosition.x = Mathf.Clamp(point.x, -_gameSize.x, _gameSize.x);
-            _targetPosition.z = Mathf.Clamp(point.z, -_gameSize.y, _gameSize.y);
         }
     }
 
